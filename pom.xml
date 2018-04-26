@@ -30,6 +30,13 @@
       <version>4.7</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.aspose.cells</groupId>
+      <artifactId>aspose-cells</artifactId>
+      <version>8.6.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/aspose-cells-8.6.2.jar</systemPath>
+    </dependency>
   </dependencies>
 
   <build>

@@ -23,7 +23,7 @@ public class CellToPDF {
     /**
      * 获取license
      *
-     * @return
+     * @return boolean
      */
     public static boolean getLicense() {
         boolean result = false;

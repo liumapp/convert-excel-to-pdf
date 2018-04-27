@@ -43,7 +43,7 @@ public class CellToPDF {
      * @param excelPath excel file path
      * @param pdfPath pdf file path
      */
-    public void excel2pdf(String excelPath , String pdfPath) {
+    public void excel2pdf(String pdfPath, String excelPath) {
         // 验证License
         if (!getLicense()) {
             return;

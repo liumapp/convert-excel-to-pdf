@@ -1,6 +1,9 @@
 package com.liumapp.convert.cell;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+
+import java.io.FileNotFoundException;
 
 /**
  * @author liumapp
@@ -11,8 +14,15 @@ import junit.framework.TestCase;
  */
 public class CellToPDFTest extends TestCase {
 
-    public void testConvert () {
+    private String pdfPath = "/usr/local/tomcat/project/convert-excel-to-pdf/test.pdf";
 
+    private String excelPath = "/usr/local/tomcat/project/convert-excel-to-pdf/excel/test.xlsx";
+
+    @Test
+    public void testConvert () throws FileNotFoundException {
+        CellToPDF doc2PDF = new CellToPDF();
+        doc2PDF.excel2pdf(pdfPath,excelPath);
     }
+
 
 }

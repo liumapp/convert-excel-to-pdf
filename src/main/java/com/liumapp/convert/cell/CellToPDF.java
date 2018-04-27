@@ -17,15 +17,15 @@ import java.io.InputStream;
  */
 public class CellToPDF {
 
-    private static InputStream license;
-    private static InputStream cells;
+    private InputStream license;
+    private InputStream cells;
 
     /**
      * 获取license
      *
      * @return boolean
      */
-    public static boolean getLicense() {
+    public boolean getLicense() {
         boolean result = false;
         try {
             license = CellToPDF.class.getClassLoader().getResourceAsStream("license.xml");    // license路径
@@ -41,9 +41,10 @@ public class CellToPDF {
 
     /**
      *
-     * @param args
+     * @param excelPath excel file path
+     * @param pdfPath pdf file path
      */
-    public static void main(String[] args) {
+    public void excel2pdf(String excelPath , String pdfPath) {
         // 验证License
         if (!getLicense()) {
             return;

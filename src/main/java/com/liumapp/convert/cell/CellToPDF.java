@@ -5,6 +5,7 @@ import com.aspose.cells.SaveFormat;
 import com.aspose.cells.Workbook;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
@@ -18,7 +19,6 @@ import java.io.InputStream;
 public class CellToPDF {
 
     private InputStream license;
-    private InputStream cells;
 
     /**
      * 获取license
@@ -29,7 +29,6 @@ public class CellToPDF {
         boolean result = false;
         try {
             license = CellToPDF.class.getClassLoader().getResourceAsStream("license.xml");    // license路径
-//            cells = TestCells.class.getClassLoader().getResourceAsStream("test.xlsx");    // 原始excel路径
             License aposeLic = new License();
             aposeLic.setLicense(license);
             result = true;
@@ -51,8 +50,8 @@ public class CellToPDF {
         }
         try {
             long old = System.currentTimeMillis();
-            Workbook wb = new Workbook(cells);
-            File file = new File("D:\\test.pdf");// 输出路径
+            Workbook wb = new Workbook(new FileInputStream(excelPath));
+            File file = new File(pdfPath);// 输出路径
             FileOutputStream fileOS = new FileOutputStream(file);
 
             wb.save(fileOS, SaveFormat.PDF);
